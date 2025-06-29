@@ -129,7 +129,6 @@ async def unban_all():
                 response = await client.delete(url+f'/{id}', headers=headers, timeout=10)
                 response.raise_for_status()
         logger.info(f'All ips unbanned')
-        return id
     except httpx.HTTPStatusError:
         message = f"[{response.status_code}] {response.text}"
         logger.error(message)
