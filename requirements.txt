@@ -1,0 +1,13 @@
+cffi==1.17.1
+cryptography==45.0.3
+dotenv==0.9.9
+grpclib==0.4.8
+h2==4.2.0
+hpack==4.1.0
+hyperframe==6.1.0
+multidict==6.4.4
+protobuf==6.31.1
+pycparser==2.22
+pyOpenSSL==25.1.0
+python-decouple==3.8
+python-dotenv==1.1.0

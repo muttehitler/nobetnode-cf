@@ -1,0 +1,9 @@
+**/__pycache__/
+.env
+venv
+ssl_cert.pem
+ssl_key.pem
+client.pem
+key.pem
+.git
+.gitignore
