@@ -1,0 +1,7 @@
+services:
+  nobetnode:
+    image: ghcr.io/muttehitler/nobetnode-cf:latest
+    network_mode: host
+    env_file: .env
+    volumes:
+      - /var/lib/nobetnode:/var/lib/nobetnode
