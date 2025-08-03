@@ -6,7 +6,7 @@ CONFIG_DIR="/etc/opt/$APP_NAME"
 DATA_DIR="/var/lib/$APP_NAME"
 COMPOSE_FILE="$CONFIG_DIR/docker-compose.yml"
 ENV_FILE="$CONFIG_DIR/.env"
-PANEL_ADDRESS=""
+CF_TOKEN=""
 
 FETCH_REPO="muttehitler/nobetnode-cf"
 SCRIPT_URL="https://github.com/$FETCH_REPO/raw/main/script.sh"
@@ -233,7 +233,7 @@ client_pem(){
 }
 
 set_cf_token(){
-    read -p "Enter the panel address: " CF_TOKEN
+    read -p "Enter the cloudflare api token: " CF_TOKEN
 
     if grep -q "^CF_TOKEN=" "$ENV_FILE"; then
         sed -i.bak "s|^CF_TOKEN=.*|CF_TOKEN=$CF_TOKEN|" "$ENV_FILE"
