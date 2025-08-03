@@ -232,6 +232,16 @@ client_pem(){
     colorized_echo cyan "Then run \"nobetnode-cf up\""
 }
 
+set_cf_token(){
+    read -p "Enter the panel address: " CF_TOKEN
+
+    if grep -q "^CF_TOKEN=" "$ENV_FILE"; then
+        sed -i.bak "s|^CF_TOKEN=.*|CF_TOKEN=$CF_TOKEN|" "$ENV_FILE"
+    else
+        echo "CF_TOKEN=$CF_TOKEN" >> "$ENV_FILE"
+    fi
+}
+
 install_command() {
     check_running_as_root
     # Check if Nöbetnode CF is already installed
@@ -272,6 +282,8 @@ install_command() {
     detect_compose
     install_nobetnode_cf_script
     install_nobetnode_cf $nightly
+
+    set_cf_token
 
     client_pem
 }
